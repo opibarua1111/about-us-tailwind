@@ -6,9 +6,27 @@
   height: 40vmin;
   pointer-events: none;
 }
+.banner {
+  height: 400px;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative;
+  z-index: 1;
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
+    -webkit-animation: App-logo-spin infinite 20s linear;
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -26,6 +44,15 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes App-logo-spin {
